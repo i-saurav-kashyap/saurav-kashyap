@@ -38,4 +38,4 @@ assets/docs/             # résumé (PDF)
 
 ## Links
 
-[LinkedIn](https://www.linkedin.com/in/saurav21/) · [GitHub](https://github.com/sau181v) · urskashyap21@gmail.com
+[LinkedIn](https://www.linkedin.com/in/saurav21/) · [GitHub](https://github.com/i-saurav-kashyap) · urskashyap21@gmail.com
