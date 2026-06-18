@@ -358,7 +358,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; line-height: 1
 /* ============================================================ RESPONSIVE */
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .signalmap { max-width: 420px; order: -1; }
+  .signalmap { max-width: 420px; margin-inline: auto; order: -1; }
   .xp__areas, .ladder, .registry { grid-template-columns: repeat(2, 1fr); }
   .creds, .thoughts, .engagements { grid-template-columns: 1fr; }
 }
@@ -373,6 +373,14 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; line-height: 1
   .xp__areas, .ladder, .registry { grid-template-columns: 1fr; }
   .xp__head { flex-direction: column; }
   .hero__facts { gap: .4rem 1rem; }
+}
+/* tightest phones — keep CTAs reachable and cards from feeling boxed-in */
+@media (max-width: 420px) {
+  .statusbar__inner { gap: .9rem; }
+  .hero__cta .btn, .contact__links .btn { flex: 1 1 auto; justify-content: center; }
+  .tcard, .xp { padding-left: 1.1rem; padding-right: 1.1rem; }
+  .timeline__item { padding-left: 1.9rem; }
+  .signalmap { max-width: 100%; }
 }
 
 /* ============================================================ MOTION SAFETY */

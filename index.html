@@ -90,7 +90,7 @@
         <!-- SIGNATURE: career as a signal-graph -->
         <figure class="signalmap reveal" aria-label="Career as a system: learner to staff engineer" role="img">
           <figcaption class="signalmap__cap mono">// career.signal-flow</figcaption>
-          <svg viewBox="0 0 320 420" class="signalmap__svg" preserveAspectRatio="xMidYMid meet">
+          <svg viewBox="0 0 320 460" class="signalmap__svg" preserveAspectRatio="xMidYMid meet">
             <defs>
               <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="var(--signal)" stop-opacity="0.15"/>
@@ -100,10 +100,10 @@
 
             <!-- the connecting path -->
             <path id="flowpath" class="signalmap__edge"
-              d="M60 40 C 60 110, 260 110, 260 175 C 260 240, 60 240, 60 305 C 60 360, 160 360, 160 392"
+              d="M60 40 C 60 110, 260 110, 260 175 C 260 240, 60 240, 60 305 C 60 358, 105 362, 105 400"
               fill="none" stroke="url(#edge)" />
             <path class="signalmap__edge-glow"
-              d="M60 40 C 60 110, 260 110, 260 175 C 260 240, 60 240, 60 305 C 60 360, 160 360, 160 392"
+              d="M60 40 C 60 110, 260 110, 260 175 C 260 240, 60 240, 60 305 C 60 358, 105 362, 105 400"
               fill="none" />
 
             <!-- nodes -->
@@ -122,7 +122,7 @@
               <text x="20" y="5" class="node__label">engineer</text>
               <text x="20" y="20" class="node__sub mono">2025</text>
             </g>
-            <g class="node node--current" transform="translate(160,392)">
+            <g class="node node--current" transform="translate(105,400)">
               <circle r="11" class="node__pulse" />
               <circle r="9" class="node__dot" />
               <text x="18" y="5" class="node__label">systems thinker</text>
@@ -130,11 +130,12 @@
             </g>
 
             <!-- future / ghost node -->
-            <g class="node node--ghost" transform="translate(285,392)">
+            <path class="signalmap__ghostedge" d="M117 401 C 160 419, 210 433, 244 441" fill="none" />
+            <g class="node node--ghost" transform="translate(255,442)">
               <circle r="9" class="node__dot" />
-              <text x="-16" y="-12" text-anchor="end" class="node__label">staff</text>
+              <text x="18" y="5" class="node__label">staff</text>
+              <text x="18" y="20" class="node__sub mono">next</text>
             </g>
-            <path class="signalmap__ghostedge" d="M171 392 H 276" fill="none" />
 
             <!-- the traveling signal -->
             <circle r="4" class="signalmap__pulse">
