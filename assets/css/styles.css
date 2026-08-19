@@ -108,6 +108,8 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; line-height: 1
 }
 .nav a:hover { color: var(--ink); }
 .nav a:hover::after { width: 100%; }
+.nav a.is-active { color: var(--ink); }
+.nav a.is-active::after { width: 100%; background: var(--signal-dim); }
 
 .status-chip {
   display: inline-flex; align-items: center; gap: .5rem;
@@ -311,6 +313,38 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; line-height: 1
 .eng h4 { font-size: 1rem; margin-bottom: .35rem; }
 .eng p { color: var(--muted); font-size: .9rem; }
 
+/* ============================================================ PROJECTS */
+.pgroup { margin-bottom: 2.8rem; }
+.pgroup:last-child { margin-bottom: 0; }
+.pgroup__label { color: var(--signal); letter-spacing: .08em; margin-bottom: 1.2rem; padding-bottom: .6rem; border-bottom: 1px solid var(--line); }
+.pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.pcard {
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel);
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.pcard:hover {
+  border-color: color-mix(in srgb, var(--signal) 45%, var(--line));
+  transform: translateY(-3px);
+  box-shadow: 0 12px 34px color-mix(in srgb, var(--void) 60%, transparent);
+}
+.pcard__shot {
+  display: block; position: relative; aspect-ratio: 960 / 534; overflow: hidden;
+  border-bottom: 1px solid var(--line); background: var(--panel-2);
+}
+.pcard__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .45s var(--ease); }
+.pcard:hover .pcard__shot img { transform: scale(1.035); }
+.pcard__body { padding: 1.05rem 1.2rem 1.15rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
+.pcard__title { font-size: 1.08rem; }
+.pcard__desc { color: var(--muted); font-size: .89rem; flex: 1; }
+.pcard__tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .35rem; }
+.pcard__tags li { font-family: var(--f-mono); font-size: .67rem; color: var(--muted-dim); border: 1px solid var(--line); border-radius: 5px; padding: .15rem .42rem; letter-spacing: .02em; }
+.pcard__links { display: flex; gap: 1rem; margin-top: .1rem; padding-top: .75rem; border-top: 1px solid var(--line); }
+.pcard__links a { font-family: var(--f-mono); font-size: .78rem; color: var(--muted); transition: color .2s var(--ease); }
+.pcard__links a:hover { color: var(--signal); }
+.pcard__links a.is-primary { color: var(--ink); }
+.pcard__links a.is-primary:hover { color: var(--signal); }
+
 /* ============================================================ REGISTRY / TOOLBOX */
 .registry { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .regcard { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 1.3rem; transition: border-color .25s var(--ease); }
@@ -359,6 +393,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; line-height: 1
   .signalmap { max-width: 420px; margin-inline: auto; order: -1; }
   .xp__areas, .registry { grid-template-columns: repeat(2, 1fr); }
   .creds, .thoughts, .engagements { grid-template-columns: 1fr; }
+  .pgrid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .nav, .status-chip { display: none; }
@@ -369,6 +404,7 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; line-height: 1
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   .xp__areas, .registry { grid-template-columns: 1fr; }
+  .pgrid { grid-template-columns: 1fr; }
   .xp__head { flex-direction: column; }
   .hero__facts { gap: .4rem 1rem; }
 }

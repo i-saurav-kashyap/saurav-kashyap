@@ -47,4 +47,23 @@
   if (reduceMotion) {
     document.querySelectorAll(".js-motion").forEach(function (m) { m.remove(); });
   }
+
+  /* scroll-spy: highlight the nav link for the section in view */
+  const navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  const sections = navLinks
+    .map(function (link) { return document.getElementById(link.getAttribute("href").slice(1)); })
+    .filter(Boolean);
+  if (sections.length && "IntersectionObserver" in window) {
+    const setActive = function (id) {
+      navLinks.forEach(function (link) {
+        link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+      });
+    };
+    const spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    sections.forEach(function (section) { spy.observe(section); });
+  }
 })();
